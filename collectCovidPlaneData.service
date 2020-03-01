@@ -1,0 +1,10 @@
+[Unit]
+Description=Collect airline flight state data
+ 
+[Service]
+Type=simple
+IOSchedulingClass=2
+IOSchedulingPriority=7
+ExecStart=-/etc/systemd/system/covidPlanes.sh
+User=st33v
+Group=st33v

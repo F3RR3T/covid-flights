@@ -5,6 +5,6 @@ Description=Collect airline flight state data
 Type=simple
 IOSchedulingClass=2
 IOSchedulingPriority=7
-ExecStart=-/etc/systemd/system/covidPlanes.sh
+ExecStart=-/usr/local/bin/getPlanes.py
 User=st33v
 Group=st33v

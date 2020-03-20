@@ -15,6 +15,7 @@ import datetime as dt
 # epoch = dt.datetime.utcfromtimestamp(0)
 #def unixSecs(myTime):
 #    return (myTime - epoch).total_seconds()
+csvPath = '/home/st33v/dev/service/covid-flights/'
 
 def isNum(item):
     """
@@ -55,7 +56,7 @@ planeDict = makeListofDicts(planes)
 planeFrame = pd.DataFrame.from_dict(planeDict)
 planeFrame['timeStamp'] = "{:%Y%m%dT%H%M}".format(dt.datetime.now())
 
-with open('covidPlanes.csv', 'a') as out:
+with open(csvPath + 'covidPlanes.csv', 'a') as out:
     planeFrame.to_csv(out, mode = 'a', index = False, header = out.tell()==0)
 
 # Brief info for Journald
